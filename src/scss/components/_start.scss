@@ -1,0 +1,45 @@
+.start_container {
+  display: flex;
+
+  .start_img {
+    width: 50vw;
+    height: 75vh;
+    background-image: url("../../assets/images/Hero Image.png");
+    background-size: cover;
+    background-position: right;
+  }
+
+  .start_CTA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: 150px;
+    width: 50vw;
+
+    img {
+      margin-bottom: 20px;
+    }
+
+    .CTA_header {
+      color: $text-color;
+      font-size: 38px;
+      font-weight: normal;
+    }
+
+    .CTA_buttons {
+      button {
+        display: inline-block;
+        font-size: 36px;
+        font-weight: lighter;
+        background-color: inherit;
+        border: 0.75px solid #3C3C3C;
+        padding: 10px 40px;
+        line-height: 1;
+        color: $text-color;
+        margin: 20px;
+      }
+    }
+  }
+}

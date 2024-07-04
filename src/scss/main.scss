@@ -1,8 +1,9 @@
-@import "normalize";
+@import "reset";
 @import "settings/colors";
 @import "settings/fonts";
 @import "components/navbar";
 @import "components/start";
+@import "components/information";
 
 body {
   font-family: $font-base;

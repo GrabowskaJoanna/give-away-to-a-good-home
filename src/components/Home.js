@@ -4,15 +4,13 @@ import Information from "./Information";
 import AboutUs from "./AboutUs";
 import Organisations from "./Organisations";
 import Contact from "./Contact";
-import { Element } from "react-scroll";
+import Start from "./Start";
 
 const Home = () => {
   return (
     <>
       <HomeHeader />
-      <Element name="startSection">
-        <h1>Start Section</h1>
-      </Element>
+      <Start />
       <Information />
       <AboutUs />
       <Organisations />

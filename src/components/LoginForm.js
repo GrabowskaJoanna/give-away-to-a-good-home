@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import HomeHeader from "./HomeHeader";
 
 const LoginForm = () => {
-    return (
-        <div>
-            LOGOWANIE
-        </div>
-    );
+  return (
+    <>
+      <HomeHeader />
+      LOGOWANIE
+    </>
+  );
 };
 
 export default LoginForm;

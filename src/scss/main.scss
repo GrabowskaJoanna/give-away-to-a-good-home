@@ -1,3 +1,11 @@
 @import "normalize";
 @import "settings/colors";
 @import "settings/fonts";
+@import "components/navbar";
+
+body {
+  font-family: $font-base;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

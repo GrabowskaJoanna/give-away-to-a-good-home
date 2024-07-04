@@ -3,7 +3,9 @@
 @import "settings/fonts";
 @import "components/navbar";
 @import "components/start";
-@import "components/information";
+@import "components/activity";
+@import "components/button.scss";
+@import "components/information.scss";
 
 body {
   font-family: $font-base;

@@ -1,0 +1,28 @@
+.activity_container {
+  display: flex;
+  background-image: url("../../assets/images/3 Columns Background.png");
+  text-align: center;
+  justify-content: space-around;
+
+  .card {
+    width: 20%;
+    color: $text-color;
+    margin: 60px;
+
+    .card_number {
+      font-size: 90px;
+      font-weight: lighter;
+    }
+
+    .card_header {
+      font-size: 18px;
+      padding: 20px;
+    }
+
+    .card_text {
+      font-size: 16px;
+      font-weight: lighter;
+      line-height: 1.3;
+    }
+  }
+}

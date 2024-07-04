@@ -2,6 +2,7 @@ import React from "react";
 import { Element } from "react-scroll";
 import DecorationImage from "../assets/images/Decoration.png";
 import { useNavigate } from "react-router-dom";
+import Button from "../abstract/Button";
 
 const Start = () => {
   const navigate = useNavigate();
@@ -16,14 +17,14 @@ const Start = () => {
           </h1>
           <img src={DecorationImage} alt="underline" />
           <div className="CTA_buttons">
-            <button onClick={() => navigate("/logowanie")}>
-              Oddaj <br />
-              rzeczy
-            </button>
-            <button onClick={() => navigate("/logowanie")}>
-              Zorganizuj <br />
-              zbiórkę
-            </button>
+            <Button
+              text="ODDAJ RZECZY"
+              onClick={() => navigate("/logowanie")}
+            />
+            <Button
+              text="ZORGANIZUJ ZBIÓRKĘ"
+              onClick={() => navigate("/logowanie")}
+            />
           </div>
         </div>
       </section>

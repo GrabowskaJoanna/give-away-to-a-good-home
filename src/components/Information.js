@@ -1,6 +1,5 @@
 import React from "react";
 import { Element } from "react-scroll";
-import DecorationImage from "../assets/images/Decoration.png";
 import { useNavigate } from "react-router-dom";
 import Button from "../abstract/Button";
 import IconCard from "../abstract/IconCard";
@@ -8,6 +7,7 @@ import TshirtIcon from "../assets/images/Icon.png";
 import BagIcon from "../assets/images/Icon-1.png";
 import loupeIcon from "../assets/images/Icon-2.png";
 import refreshIcon from "../assets/images/Icon-3.png";
+import Decoration from "../abstract/Decoration";
 
 const Information = () => {
   const navigate = useNavigate();
@@ -15,11 +15,7 @@ const Information = () => {
     <Element name="informationSection">
       <section className="information_container">
         <h1 className="information_header">Wystarczą 4 proste kroki</h1>
-        <img
-          className="header_decoration"
-          src={DecorationImage}
-          alt="underline"
-        />
+        <Decoration />
         <div className="information_cards">
           <IconCard
             src={TshirtIcon}

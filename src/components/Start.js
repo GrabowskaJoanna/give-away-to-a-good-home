@@ -1,8 +1,8 @@
 import React from "react";
 import { Element } from "react-scroll";
-import DecorationImage from "../assets/images/Decoration.png";
 import { useNavigate } from "react-router-dom";
 import Button from "../abstract/Button";
+import Decoration from "../abstract/Decoration";
 
 const Start = () => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Start = () => {
             Zacznij pomagać! <br />
             Oddaj niechciane rzeczy w zaufane ręce
           </h1>
-          <img src={DecorationImage} alt="underline" />
+          <Decoration />
           <div className="CTA_buttons">
             <Button
               text="ODDAJ RZECZY"

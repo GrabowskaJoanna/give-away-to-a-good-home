@@ -1,0 +1,43 @@
+.about {
+  display: flex;
+  margin: 20px 0;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+.about_img {
+  width: 50%;
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.about_container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+  width: 50%;
+  justify-content: center;
+
+  .about_header {
+    font-size: 38px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+
+  .decoration {
+    padding-bottom: 20px;
+    width: 250px;
+    align-self: center;
+  }
+
+  .about_text {
+    font-size: 30px;
+    line-height: 1.5;
+  }
+
+  .about_signature {
+    align-self: flex-end;
+    margin: 50px 20px;
+  }
+}

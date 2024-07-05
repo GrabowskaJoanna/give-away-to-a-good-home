@@ -14,9 +14,9 @@ const Contact = () => {
         <section className="contact_container">
           <div className="contact_img" />
           <div className="contact_form">
-            <h1 className="form_header">Skontaktuj się z nami</h1>
+            <h1 className="contact_form_header">Skontaktuj się z nami</h1>
             <Decoration />
-            <div className="form_inputs">
+            <div className="contact_form_inputs">
               <Input
                 text="Wpisz swoje imię"
                 type="text"

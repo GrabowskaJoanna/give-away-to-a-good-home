@@ -1,0 +1,33 @@
+label {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  color: $text-color;
+  padding: 15px;
+}
+
+input {
+  background-color: inherit;
+  border: none;
+  border-bottom: 2px solid $text-color;
+  color: $section-color;
+  opacity: 0.2;
+  font-size: 18px;
+  padding-top: 10px;
+}
+
+textarea {
+  background-color: inherit;
+  border: none;
+  border-bottom: 2px solid $text-color;
+  width: 520px;
+  height: 100px;
+  color: $section-color;
+  opacity: 0.2;
+  font-size: 18px;
+  line-height: 1;
+  padding-top: 10px;
+}

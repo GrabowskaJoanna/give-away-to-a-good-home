@@ -6,7 +6,7 @@ import SignatureImage from "../assets/images/Signature.png";
 
 const AboutUs = () => {
   return (
-    <Element name="aboutSection">
+    <Element name="aboutSection" id="aboutSection">
       <section className="about">
         <div className="about_container">
           <h1 className="about_header">O nas</h1>

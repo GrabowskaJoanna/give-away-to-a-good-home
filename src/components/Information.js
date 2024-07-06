@@ -12,7 +12,7 @@ import Decoration from "../abstract/Decoration";
 const Information = () => {
   const navigate = useNavigate();
   return (
-    <Element name="informationSection">
+    <Element name="informationSection" id="informationSection">
       <section className="information_container">
         <h1 className="information_header">Wystarczą 4 proste kroki</h1>
         <Decoration />

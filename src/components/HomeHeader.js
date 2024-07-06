@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import { useLocation } from "react-router-dom";
+import { Link as ScrollLink, scroller } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 
 const HomeHeader = () => {
@@ -10,13 +10,10 @@ const HomeHeader = () => {
   useEffect(() => {
     if (location.state && location.state.scrollToSection) {
       const section = location.state.scrollToSection;
-      const element = document.getElementById(section);
-      if (element) {
-        scroll.scrollTo(element.offsetTop, {
-          smooth: true,
-          duration: 500,
-        });
-      }
+      scroller.scrollTo(section, {
+        smooth: true,
+        duration: 500,
+      });
     }
   }, [location]);
 

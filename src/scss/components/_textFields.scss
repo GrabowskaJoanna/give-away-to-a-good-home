@@ -13,21 +13,28 @@ input {
   background-color: inherit;
   border: none;
   border-bottom: 2px solid $text-color;
-  color: $section-color;
+  color: $text-color;
   opacity: 0.2;
   font-size: 18px;
   padding-top: 10px;
+}
+.input_error {
+  background-color: rgba(190, 26, 26, 0.3);
+  border-bottom-color: red;
 }
 
 textarea {
   background-color: inherit;
   border: none;
   border-bottom: 2px solid $text-color;
-  width: 520px;
+  width: 530px;
   height: 100px;
   color: $section-color;
   opacity: 0.2;
   font-size: 18px;
   line-height: 1;
   padding-top: 10px;
+}
+.text_error {
+  color: crimson;
 }

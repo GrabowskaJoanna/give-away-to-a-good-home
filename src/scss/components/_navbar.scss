@@ -36,4 +36,13 @@
     padding: 10px 15px;
     cursor: pointer;
   }
+  .scroll_link {
+    text-decoration: none;
+    color: $text-color;
+  }
+
+  .router_link {
+    text-decoration: none;
+    color: $text-color;
+  }
 }

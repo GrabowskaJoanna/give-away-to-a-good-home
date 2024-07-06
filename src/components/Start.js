@@ -7,7 +7,7 @@ import Decoration from "../abstract/Decoration";
 const Start = () => {
   const navigate = useNavigate();
   return (
-    <Element name="startSection">
+    <Element name="startSection" id="startSection">
       <section className="start_container">
         <div className="start_img"></div>
         <div className="start_CTA">

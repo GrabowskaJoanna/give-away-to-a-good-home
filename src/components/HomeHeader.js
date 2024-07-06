@@ -1,60 +1,157 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { Link } from "react-scroll";
+import React, { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 
 const HomeHeader = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
+  useEffect(() => {
+    if (location.state && location.state.scrollToSection) {
+      const section = location.state.scrollToSection;
+      const element = document.getElementById(section);
+      if (element) {
+        scroll.scrollTo(element.offsetTop, {
+          smooth: true,
+          duration: 500,
+        });
+      }
+    }
+  }, [location]);
+
   return (
     <div className="header">
       <ul className="header_user">
         <li>
-          <NavLink
+          <RouterLink
             to="/logowanie"
-            className={({ isActive }) =>
-              isActive ? "user_link-active" : "user_link"
+            className={
+              location.pathname === "/logowanie"
+                ? "user_link-active"
+                : "user_link"
             }
           >
             Zaloguj
-          </NavLink>
+          </RouterLink>
         </li>
         <li>
-          <NavLink
+          <RouterLink
             to="/rejestracja"
-            className={({ isActive }) =>
-              isActive ? "user_link-active" : "user_link"
+            className={
+              location.pathname === "/rejestracja"
+                ? "user_link-active"
+                : "user_link"
             }
           >
             Załóż konto
-          </NavLink>
+          </RouterLink>
         </li>
       </ul>
       <nav className="header_nav">
         <ul className="nav_links">
-          <li className="nav_link">
-            {" "}
-            <Link to="startSection" smooth={true} duration={500}>
-              Start
-            </Link>
-          </li>
-          <li className="nav_link">
-            <Link to="informationSection" smooth={true} duration={500}>
-              O co chodzi?
-            </Link>
-          </li>
-          <li className="nav_link">
-            <Link to="aboutSection" smooth={true} duration={500}>
-              O nas
-            </Link>
-          </li>
-          <li className="nav_link">
-            <Link to="organisationsSection" smooth={true} duration={500}>
-              Fundacja i organizacje
-            </Link>
-          </li>
-          <li className="nav_link">
-            <Link to="contactSection" smooth={true} duration={500}>
-              Kontakt
-            </Link>
-          </li>
+          {isHomePage ? (
+            <>
+              <li className="nav_link">
+                <ScrollLink
+                  to="startSection"
+                  smooth={true}
+                  duration={500}
+                  className="scroll_link"
+                >
+                  Start
+                </ScrollLink>
+              </li>
+              <li className="nav_link">
+                <ScrollLink
+                  to="informationSection"
+                  smooth={true}
+                  duration={500}
+                  className="scroll_link"
+                >
+                  O co chodzi?
+                </ScrollLink>
+              </li>
+              <li className="nav_link">
+                <ScrollLink
+                  to="aboutSection"
+                  smooth={true}
+                  duration={500}
+                  className="scroll_link"
+                >
+                  O nas
+                </ScrollLink>
+              </li>
+              <li className="nav_link">
+                <ScrollLink
+                  to="organisationsSection"
+                  smooth={true}
+                  duration={500}
+                  className="scroll_link"
+                >
+                  Fundacja i organizacje
+                </ScrollLink>
+              </li>
+              <li className="nav_link">
+                <ScrollLink
+                  to="contactSection"
+                  smooth={true}
+                  duration={500}
+                  className="scroll_link"
+                >
+                  Kontakt
+                </ScrollLink>
+              </li>
+            </>
+          ) : (
+            <>
+              <li className="nav_link">
+                <RouterLink
+                  to="/"
+                  className="router_link"
+                  state={{ scrollToSection: "startSection" }}
+                >
+                  Start
+                </RouterLink>
+              </li>
+              <li className="nav_link">
+                <RouterLink
+                  to="/"
+                  className="router_link"
+                  state={{ scrollToSection: "informationSection" }}
+                >
+                  O co chodzi?
+                </RouterLink>
+              </li>
+              <li className="nav_link">
+                <RouterLink
+                  to="/"
+                  className="router_link"
+                  state={{ scrollToSection: "aboutSection" }}
+                >
+                  O nas
+                </RouterLink>
+              </li>
+              <li className="nav_link">
+                <RouterLink
+                  to="/"
+                  className="router_link"
+                  state={{ scrollToSection: "organisationsSection" }}
+                >
+                  Fundacja i organizacje
+                </RouterLink>
+              </li>
+              <li className="nav_link">
+                <RouterLink
+                  to="/"
+                  className="router_link"
+                  state={{ scrollToSection: "contactSection" }}
+                >
+                  Kontakt
+                </RouterLink>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
     </div>

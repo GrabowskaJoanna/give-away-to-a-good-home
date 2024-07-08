@@ -1,0 +1,59 @@
+.organisations_container {
+  color: $text-color;
+  margin: 40px auto;
+  width: 75vw;
+  text-align: center;
+}
+
+.organisations_header {
+  font-family: $font-base;
+  font-size: 38px;
+  padding-bottom: 30px;
+}
+.decoration {
+  padding-bottom: 30px;
+}
+.organisations_text {
+  width: 45%;
+  margin: 60px auto;
+  font-family: $font-base;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.organisations_row {
+  font-family: $font-alt;
+  color: $text-color;
+  padding: 25px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid $text-color;
+
+  .organisations_info_header {
+    font-size: 26px;
+    text-align: left;
+    padding-bottom: 5px;
+  }
+}
+
+.organisations_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .btn {
+    border: none;
+    font-size: 24px;
+    width: 240px;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+  p {
+    padding: 10px;
+    font-size: 18px;
+  }
+}

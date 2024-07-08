@@ -84,6 +84,7 @@ const Contact = () => {
             ...prevErrors,
             ...serverErrors,
           }));
+          console.error(serverErrors);
         });
     }
   };

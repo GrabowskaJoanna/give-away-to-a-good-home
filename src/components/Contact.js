@@ -11,7 +11,7 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [errors, setErrors] = useState("");
+  const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
 
   const validator = () => {
@@ -45,16 +45,48 @@ const Contact = () => {
     return isValid;
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (validator()) {
-  //     console.log("Walidacja przebiegła pomyślnie");
-  //     fetch("https://fer-api.coderslab.pl/v1/portfolio/contact", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //     });
-  //   }
-  // };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSuccessMessage("");
+    if (validator()) {
+      const data = {
+        name,
+        email,
+        message,
+      };
+      fetch("https://fer-api.coderslab.pl/v1/portfolio/contact", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => {
+          if (!response.ok) {
+            return response.json().then((data) => {
+              throw new Error(JSON.stringify(data.errors));
+            });
+          }
+          return response.json();
+        })
+        .then((data) => {
+          if (data.status === "success") {
+            setErrors({});
+            setName("");
+            setEmail("");
+            setMessage("");
+            setSuccessMessage("Formularz został wysłany");
+          }
+        })
+        .catch((error) => {
+          const serverErrors = JSON.parse(error.message);
+          setErrors((prevErrors) => ({
+            ...prevErrors,
+            ...serverErrors,
+          }));
+        });
+    }
+  };
   return (
     <Element name="contactSection" id="contactSection">
       <div className="container">
@@ -92,6 +124,11 @@ const Contact = () => {
               error={errors.message}
               className={errors.message ? "textarea_error" : ""}
             />
+            {successMessage && (
+              <p style={{ color: "green", fontWeight: "bold" }}>
+                {successMessage}
+              </p>
+            )}
             <Button text="Wyślij" type="submit" />
           </form>
         </section>

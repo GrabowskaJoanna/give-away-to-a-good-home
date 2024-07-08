@@ -35,6 +35,10 @@ textarea {
   line-height: 1;
   padding-top: 10px;
 }
+.textarea_error {
+  background-color: rgba(190, 26, 26, 0.3);
+  border-bottom-color: red;
+}
 .text_error {
   color: crimson;
 }

@@ -9,6 +9,7 @@ const Form = ({ handleClick, isLogin }) => {
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
   const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState("");
   const validator = () => {
     let errors = {};
     let isValid = true;
@@ -38,7 +39,7 @@ const Form = ({ handleClick, isLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validator()) {
-      console.log("Walidacja przebiegła pomyślnie");
+      setSuccessMessage("Walidacja przebiegła pomyślnie");
       setEmail("");
       setPassword("");
       setRepeatPassword("");
@@ -85,6 +86,13 @@ const Form = ({ handleClick, isLogin }) => {
               />
             )}
           </div>
+          {successMessage && (
+            <p
+              style={{ color: "green", fontWeight: "bold", marginTop: "10px" }}
+            >
+              {successMessage}
+            </p>
+          )}
           <div className="form_buttons">
             <Button
               text={!isLogin ? "Zaloguj się" : "Załóż konto"}
